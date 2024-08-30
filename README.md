@@ -5,7 +5,7 @@
 ## Speech Recognition and Feedback Application
 
 ### Project Topic
-This project focuses on building a web application for real-time speech recognition and feedback processing using Flask, Socket.IO, and various speech-to-text technologies.
+This project focuses on bdeveloping a web application that integrates machine learning models for real-time audio transcription and feedback processing using Flask, Socket.IO, and various speech-to-text technologies.
 
 ### Real life application
 -	Helps individuals improve their public speaking skills.
