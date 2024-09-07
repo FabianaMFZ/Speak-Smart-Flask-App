@@ -5,7 +5,7 @@
 ## Speech Recognition and Feedback Application
 
 ### Project Topic
-This project focuses on developing a web application that integrates machine learning models for real-time audio transcription and feedback processing using Flask, Socket.IO, and various speech-to-text technologies.
+This project focuses on developing a web application that integrates machine learning models for real-time audio transcription and feedback processing.
 
 ### Real life application
 -	Helps individuals improve their public speaking skills.
@@ -19,34 +19,34 @@ This application allows users to record audio in real-time, convert it to text u
 
 #### Key Features
 - Real-time audio recording and streaming.
-- Real-time transcription updates via Socket.IO.
+- Real-time transcription and confidence score updates.
 - Feedback processing for the transcript using GPT-based models.
 - Grammar checking using LanguageTool.
-- User-friendly web interface with Bootstrap.
+- User-friendly web interface.
 
 #### Here's a brief flow of how the web app operates:
 
 **User Interface Interaction:**
 
-    Start Recording: User clicks the "Start Recording" button.
-        The app sends a request to /start_recording with parameters like filename, phrases, and language codes.
-        The server begins recording audio and streaming it to the Google Cloud Speech API.
-        Real-time updates are sent to the client via Socket.IO, including transcript and confidence updates.
-  
-    Stop Recording: User clicks the "Stop Recording" button.
-        The app sends a request to /stop_recording.
-        The server stops recording, saves the audio, and updates the interface.
-        The feedback modal is shown for the user to review and provide feedback.
-  
-    Submit Feedback: User clicks the "Ready" button in the feedback modal.
-        The app sends a request to /feedback with the transcript and language code.
-        The server processes the feedback, checks grammar, and uses OpenAI to analyze the transcript.
-        The feedback, including any grammar issues and improvement suggestions, is returned and displayed in the UI.
-  
-    Retry: User clicks the "Retry" button.
-        The app sends a request to /retry to reset the session.
-        The server clears the audio queue and recording state.
-        The UI is reset to allow for a new recording session.
+Start Recording: User clicks the "Start Recording" button.
+    The app sends a request to /start_recording with parameters like filename, phrases, and language codes.
+    The server begins recording audio and streaming it to the Google Cloud Speech API.
+    Real-time updates are sent to the client via Socket.IO, including transcript and confidence updates.
+
+Stop Recording: User clicks the "Stop Recording" button.
+    The app sends a request to /stop_recording.
+    The server stops recording, saves the audio, and updates the interface.
+    The feedback modal is shown for the user to review and provide feedback.
+
+Submit Feedback: User clicks the "Ready" button in the feedback modal.
+    The app sends a request to /feedback with the transcript and language code.
+    The server processes the feedback, checks grammar, and uses OpenAI to analyze the transcript.
+    The feedback, including any grammar issues and improvement suggestions, is returned and displayed in the UI.
+
+Retry: User clicks the "Retry" button.
+    The app sends a request to /retry to reset the session.
+    The server clears the audio queue and recording state.
+    The UI is reset to allow for a new recording session.
 
 **Real-Time Updates:**
   Transcript and Confidence Updates: During recording, the server sends real-time updates about the transcript and confidence scores to the client via Socket.IO.
@@ -56,7 +56,7 @@ This application allows users to record audio in real-time, convert it to text u
 Transcript and Feedback Handling: Once recording stops, the app provides the option to review and process the transcript, integrating feedback and grammar checks before displaying the results.
 
 ### Installation and Setup
-    Clone the repository: git clone https://github.com/
+    Clone the repository: git clone [https://github.com/](https://github.com/FabianaMFZ/Speak-Smart-Web-App)
     Create a virtual environment and activate it: python -m venv venv; venv\Scripts\activate
     Install dependencies: pip install -r requirements.txt
     Set up environment variables for Google Cloud credentials and OpenAI API key.
