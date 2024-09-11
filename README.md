@@ -1,11 +1,9 @@
 # Speak Smart Web App
 
-![image](https://github.com/user-attachments/assets/efe7a141-6ff2-4d89-a9e0-2593be0abe93)
-
-## Speech Recognition and Feedback Application
-
-### Project Topic
+### Speech Recognition and Feedback Application
 This project focuses on developing a web application that integrates machine learning models for real-time audio transcription and feedback processing.
+
+![image](https://github.com/user-attachments/assets/efe7a141-6ff2-4d89-a9e0-2593be0abe93)
 
 ### Real life application
 -	Helps individuals improve their public speaking skills.
