@@ -1,7 +1,20 @@
+   *.log
+
+   *.tmp
+   *.cache
+
+   build/
+   dist/
+   node_modules/
+   
    venv/
    .env
+
+   .vscode/
 
    *.pyc
    __pycache__/
 
    instance/
+
+   *.pptx
