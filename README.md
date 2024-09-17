@@ -1,4 +1,4 @@
-# Speak Smart Web App
+# Speak Smart Flask App
 
 ### Speech Recognition and Feedback Application
 This project focuses on developing a web application that integrates machine learning models for real-time audio transcription and feedback processing.
@@ -13,7 +13,7 @@ This project focuses on developing a web application that integrates machine lea
 -	Enhances accessibility for individuals with hearing impairments by providing accurate transcriptions and feedback.
 
 ### Project Description
-This application allows users to record audio in real-time, convert it to text using Google's Speech-to-Text API, and process the transcript for feedback. The feedback includes suggestions for improvements using GPT-based models and grammar checks using LanguageTool. Users can start and stop recording, view real-time transcription updates, and get detailed feedback on the transcript.
+This Flask application allows users to record audio in real-time, convert it to text using Google's Speech-to-Text API, and process the transcript for feedback. The feedback includes suggestions for improvements using GPT-based models and grammar checks using LanguageTool. Users can start and stop recording, view real-time transcription updates, and get detailed feedback on the transcript.
 
 #### Key Features
 - Real-time audio recording and streaming.
