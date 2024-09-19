@@ -46,6 +46,9 @@ Retry: User clicks the "Retry" button.
     The server clears the audio queue and recording state.
     The UI is reset to allow for a new recording session.
 
+![Data Science Portfolio](https://github.com/user-attachments/assets/0fa41f3e-376e-4455-88ef-883f26cfb292)
+
+
 **Real-Time Updates:**
   Transcript and Confidence Updates: During recording, the server sends real-time updates about the transcript and confidence scores to the client via Socket.IO.
   The UI updates the transcript and confidence display accordingly.
