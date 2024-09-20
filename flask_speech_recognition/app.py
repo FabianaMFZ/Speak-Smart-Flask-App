@@ -205,7 +205,7 @@ def process_feedback():
                 completion = openai_client.chat.completions.create(
                     model="gpt-4o-mini",
                     messages=[
-                        {"role": "system", "content": "You are an assistant that assesses transcriptions. This is the transcript of a spoken text caught by a speech recognizing tool. Fisrt look for words or phrases that seem to be out of context in the text and might have been mispronounced. Then, display a list with the top 5 of said words/phrases, the ones that really impede communication. Then give your feedback on the following: Speaker shows a good degree of control of a range of simple and some complex grammatical forms; Speaker Uses a range of appropriate vocabulary with flexibility to give views on  certain topic."},
+                        {"role": "system", "content": "You are an assistant that assesses speaking skills in ESL context. This is the transcript of a spoken text caught by a speech recognizing tool. Fisrt look for words or phrases that seem to be out of context in the text and might have been mispronounced. Then, display a list with the top 5 of said words/phrases, the ones that really impede communication. Then give your feedback on oral production following the assessment scale of Cambridge English proficiency exams as a guide(no need to mention the scale or bands)."},
                         {"role": "user", "content": f"{text}"}
                     ],
                     max_tokens=1000,
@@ -219,31 +219,26 @@ def process_feedback():
         def check_grammar(text, language_code='en-US'):
             try:
                 url = "https://api.languagetool.org/v2/check"
-                params = {'text': text, 'language': language_code}
+                params = {
+                    'text': text,
+                    'language': language_code,
+                    'enabledCategories': 'GRAMMAR,SEMANTICS,COLLOCATIONS,REDUNDANCY,TYPOS,TYPOGRAPHY',
+                    'disabledCategories': 'PUNCTUATION,CASING',
+                    'level': 'picky' 
+                }
                 response = requests.post(url, data=params)
                 response.raise_for_status()
                 result = response.json()
-                
-                # List to store filtered corrections
+
                 corrections = []
-                
-                # Define keywords or patterns to exclude
-                exclude_patterns = ["punctuation", "spacing", "capitalization"]
-                
                 for match in result['matches']:
-                    message = match['message'].lower()
-                    
-                    # Filter out unwanted corrections
-                    if not any(pattern in message for pattern in exclude_patterns):
-                        corrections.append({
-                            "message": match['message'],
-                            "suggestions": match['replacements'],
-                            "context": match['context']['text'],
-                            "offset": match['context']['offset'],
-                            "length": match['context']['length'],
-                        })
-                
-                return corrections
+                    corrections.append({
+                        "message": match['message'],
+                        "suggestions": match['replacements'],
+                        "context": match['context']['text'],
+                        "category_id": match['rule']['category']['id'],
+                        "rule_id": match['rule']['id'],
+                    })
             
             except Exception as e:
                 logging.error(f"An error occurred while checking grammar: {e}")
