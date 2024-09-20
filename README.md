@@ -24,8 +24,7 @@ This Flask application allows users to record audio in real-time, convert it to 
 
 #### Here's a brief flow of how the web app operates:
 
-![Data Science Portfolio](https://github.com/user-attachments/assets/cd91b662-7c7e-4100-8c78-bafa6d441f9f)
-
+<img src="https://github.com/user-attachments/assets/cd91b662-7c7e-4100-8c78-bafa6d441f9f" height="250">
 
 **User Interface Interaction:**
 
@@ -48,16 +47,19 @@ Retry: User clicks the "Retry" button.
     The app sends a request to /retry to reset the session.
     The server clears the audio queue and recording state.
     The UI is reset to allow for a new recording session.
-
-![image](https://github.com/user-attachments/assets/ff35d1e2-9605-46d9-b7d6-019aa9296f4f)
-
+ 
+<img src="https://github.com/user-attachments/assets/ff35d1e2-9605-46d9-b7d6-019aa9296f4f" height="400">
 
 **Real-Time Updates:**
   Transcript and Confidence Updates: During recording, the server sends real-time updates about the transcript and confidence scores to the client via Socket.IO.
   The UI updates the transcript and confidence display accordingly.
 
+![image](https://github.com/user-attachments/assets/d18df483-df77-4aef-906b-6b6d2ed58d64)
+
 **Final Processing:**  
 Transcript and Feedback Handling: Once recording stops, the app provides the option to review and process the transcript, integrating feedback and grammar checks before displaying the results.
+
+<img src="https://github.com/user-attachments/assets/df2928c6-90b4-4804-9a40-0a4e220019c5" height="550">
 
 ### Installation and Setup
     Clone the repository: git clone [https://github.com/](https://github.com/FabianaMFZ/Speak-Smart-Web-App)
