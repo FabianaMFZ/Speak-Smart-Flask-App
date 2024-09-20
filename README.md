@@ -24,6 +24,9 @@ This Flask application allows users to record audio in real-time, convert it to 
 
 #### Here's a brief flow of how the web app operates:
 
+![Data Science Portfolio](https://github.com/user-attachments/assets/cd91b662-7c7e-4100-8c78-bafa6d441f9f)
+
+
 **User Interface Interaction:**
 
 Start Recording: User clicks the "Start Recording" button.
@@ -46,7 +49,7 @@ Retry: User clicks the "Retry" button.
     The server clears the audio queue and recording state.
     The UI is reset to allow for a new recording session.
 
-![Data Science Portfolio](https://github.com/user-attachments/assets/0fa41f3e-376e-4455-88ef-883f26cfb292)
+![image](https://github.com/user-attachments/assets/ff35d1e2-9605-46d9-b7d6-019aa9296f4f)
 
 
 **Real-Time Updates:**
